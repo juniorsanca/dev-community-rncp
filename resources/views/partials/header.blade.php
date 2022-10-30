@@ -40,7 +40,6 @@
     .login_bonjour{
         font-size: 50px;
     }
-    
     .login-btn{
         width: 100%;
         height: 50px;
@@ -68,6 +67,88 @@
         margin-top: 10px;
         margin-bottom: 30px;
     }
+    .dash-div{
+        width: 100%;
+        display: flex;
+        background-color: #EFF2F5;
+    }
+    .dash-div1{
+        width: 20%
+    }
+    .dash-div2{
+        width: 50%;
+    }
+    .dash-div2-component{
+        height: 100vh;
+        overflow-y: scroll;
+    }
+    .dash-div3{
+        width: 30%
+    }
+    .dash-div1_profil{
+        background-color: #ffffff;
+        padding: 20px;
+        width: 100%;
+        margin: 5px;
+        height: 15%;
+    }
+    .dash-div1_contact{
+        background-color: #ffffff;
+        padding: 20px;
+        width: 100%;
+        margin: 5px;
+        height: 15%;
+    }
+    .dash-div2-input{
+        width: 100%;
+        display: flex;
+    }
+    .dash-div2-input_textarea {
+        width: 80%;
+    }
+    #textarea{
+        width: 100%;
+        height: 59px;
+    }
+    .dash-div2-input_button{
+        width: 20%
+    }
+    .dash-div2-input_button_btn{
+        width: 100%;
+        height: 100%;
+    }
+    .dash-div3_actus{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .dash-div3_actu{
+        width: 48%;
+        height: 100%;
+        background-color: #ffffff;
+        margin: 2px;
+    }
+    .dash-div3_actu_img{
+        width: 100%;
+        height: 48%;
+    }
+    .dash-div3_actu_title{
+        font-size: 30px;
+    }
+    .dash-div3_actu_img-div{
+        padding: 10px;
+    }
+    @media only screen and (max-width: 1200px){
+        .dash-div1{
+            display: none
+        }
+        .dash-div3{
+            display: none
+        }
+        .dash-div2{
+            width: 100%
+        }
+    }
     @media only screen and (max-width: 600px){
 	/*Big smartphones [426px -> 600px]*/
         .login-div2 {
@@ -85,6 +166,15 @@
         }
         .login_bonjour{
             margin-top: 20px;
+        }
+        .dash-div1{
+            display: none
+        }
+        .dash-div3{
+            display: none
+        }
+        .dash-div2{
+            width: 100%
         }
     }
 </style>

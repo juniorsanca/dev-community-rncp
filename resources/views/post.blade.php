@@ -1,6 +1,6 @@
 <!-- POST -->
-<div class="flex py-4 px-4 border-b-2">
-    <div class="w-16 mr-2">
+<div class="flex py-4 px-4 border-b-2" style="background-color: #ffffff; margin: 20px 0px;">
+    <div class="">
         @if($post->user->photo)
             <img
                 class="p-2 rounded rounded-full"
@@ -13,22 +13,12 @@
                 <span class="font-medium">{{ $post->user->name }}</span>
             </a>
 
-            <div class="text-xs text-grey flex items-center my-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                     class="h-4 w-4 mr-1 feather feather-calendar">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                <span>{{ $post->created_at }}</span>
-            </div>
         </header>
         <article class="py-4 text-grey-darkest">
             {{ $post->body }}
         </article>
-        <footer class="border-t border-grey-lighter text-sm flex">
+        <footer class="border-t border-grey-lighter text-sm flex" style="display: flex; width: 100%">
+            <div style="width: 50%; display: flex;">
             <form action="{{ route('posts.like', ['post' => $post->id]) }}" method="post">
                 @csrf
                 <button type="submit"
@@ -48,7 +38,6 @@
                         </path>
                         <span> {{ $post->likes()->count() }} </span>
                     </svg>
-
                 </button>
             </form>
 
@@ -65,7 +54,18 @@
                     <span>{{ $post->comments()->count() }}</span>
                 </button>
             </form>
-
+        </div>
+            <div class="text-xs text-grey flex items-center my-1" style="width: 50%">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="h-4 w-4 mr-1 feather feather-calendar">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>{{ $post->created_at }}</span>
+            </div>
         </footer>
 
         <!-- COMMENTER -->
@@ -86,7 +86,7 @@
                         <textarea
                             id="body"
                             name="body"
-                            class="w-full border border-blue rounded"
+                            class="w-full border-blue"
                         ></textarea>
                     </div>
 
@@ -100,7 +100,10 @@
                     <div class="flex justify-end mt-2">
                         <button
                             type="submit"
-                            class="py-2 px-4 bg-white border border-blue rounded rounded-full hover:bg-blue hover:text-white">
+                            class="py-2 px-4 bg-white border border-blue hover:bg-blue hover:text-white" 
+                            style="    
+                                background-color: #4E44E3;
+                                color: #ffffff;">
                             Commenter
                         </button>
                     </div>
@@ -116,7 +119,7 @@
                 @if($comment->post_id == $post->id)
 
                     <div class="flex py-4 px-4 border-b-2">
-                        <div class="w-16 mr-2">
+                        <div class="">
                             @if($comment->user->photo)
                                 <img
                                     class="p-2 rounded rounded-full"
