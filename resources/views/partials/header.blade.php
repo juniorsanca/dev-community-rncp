@@ -30,9 +30,17 @@
         margin-top: 20%;
         padding: 20px;
     }
+    .register-form{
+        margin-top: 7%;
+        padding: 20px;
+    }
     .login_rebonjour{
         font-size: 50px;
     }
+    .login_bonjour{
+        font-size: 50px;
+    }
+    
     .login-btn{
         width: 100%;
         height: 50px;
@@ -49,6 +57,9 @@
     .login-div-password-input{
         width: 100%
     }
+    .login-div-username-input{
+        width: 100%
+    }
     #azerty{
         width: 100%;
         height: 50px;
@@ -57,7 +68,6 @@
         margin-top: 10px;
         margin-bottom: 30px;
     }
-
     @media only screen and (max-width: 600px){
 	/*Big smartphones [426px -> 600px]*/
         .login-div2 {
@@ -72,6 +82,9 @@
         }
         #azerty{
             margin-top: 40px
+        }
+        .login_bonjour{
+            margin-top: 20px;
         }
     }
 </style>
