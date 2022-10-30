@@ -138,6 +138,18 @@
     .dash-div3_actu_img-div{
         padding: 10px;
     }
+    .profil-div{
+        width: 100%;
+        height: 100vh;
+        display: flex
+    }
+    .profil-div1{
+        width: 20%;
+    }
+    .profil-div2{
+        width: 80%;
+    }
+
     @media only screen and (max-width: 1200px){
         .dash-div1{
             display: none

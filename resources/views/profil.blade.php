@@ -1,9 +1,7 @@
 <x-app-layout>
-    @include('partials.nav')
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Page profil') }}
-        </h2>
+        @include('partials.nav')
+
     </x-slot>
 
     @if(session('success'))
@@ -12,13 +10,42 @@
         </ul>
     @endif
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="m-10 mx-auto p-16 sm:p-24 lg:p-48 bg-200">
-                <!-- Carousel Body -->
-                <div class="relative rounded-lg block md:flex items-center bg-gray-100 shadow-xl" style="min-height: 19rem;">
-                    <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg" style="min-height: 19rem;">
+    <div class="profil-div">
+            <div class="profil-div1" style="background-color: #EEF2F5; heigth: 100vh">
+                <div class="dash-div1_profil">
+                    <img src="" />
+                    <p>@Username</p>
+                    <p>Développeur web</p>
+                </div>
+    
+                <div style="margin-top: 20%">
+                    <h2 class="dash-div3_actu_title" style="margin: 5px">Contacts</h2>
+                    <div class="dash-div1_contact">
+                        <img src="" />
+                        <p>@Username</p>
+                    </div>
+                    <div class="dash-div1_contact">
+                        <img src="" />
+                        <p>@Username</p>
+                    </div>
+                    <div class="dash-div1_contact">
+                        <img src="" />
+                        <p>@Username</p>
+                    </div>
+                    <div class="dash-div1_contact">
+                        <img src="" />
+                        <p>@Username</p>
+                    </div>
+                </div>
+        </div>
+ 
 
+    <div class="profil-div2" style="background-color: #EEF2F5;">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="">
+                <!-- Carousel Body -->
+                <div class="relative block md:flex items-center bg-gray-100 " style="min-height: 19rem; display: block">
+                    <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg" style="min-height: 19rem;width: 100%">
                         <!--  IMAGE  -->
                         @if(Auth::user()->photo)
                             <img src=" {{ url("imgs/".Auth::user()->photo) }}" class="card-img-top m-auto my-auto" alt="">
@@ -50,25 +77,12 @@
                             </a>
 
                         </div>
-                        <svg class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            <polygon points="50,0 100,0 50,100 0,100"></polygon>
-                        </svg>
                     </div>
                 </div>
-
-                <!-- Carousel Tabs -->
-                <div class="flex items-center pt-5 justify-between">
-                    <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full" src="https://stripe.com/img/v3/payments/overview/logos/kickstarter.svg" alt="" style="max-height: 60px;"></button>
-                    <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full" src="https://stripe.com/img/v3/payments/overview/logos/slack.svg" alt="" style="max-height: 60px;"></button>
-                    <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full" src="https://stripe.com/img/v3/payments/overview/logos/glossier.svg" alt="" style="max-height: 60px;"></button>
-                    <button class="px-2 opacity-50 hover:opacity-100 focus:opacity-100"><img class="w-full" src="https://stripe.com/img/v3/payments/overview/logos/charity_water.svg" alt="" style="max-height: 60px;"></button>
-                    <button class="px-2 opacity-100 hover:opacity-100 focus:opacity-100"><img class="w-full" src="https://stripe.com/img/v3/payments/overview/logos/missguided.svg" alt="" style="max-height: 60px;"></button>
-                </div>
-
             </div>
             <!-- Display Container (not part of component) END -->
-
         </div>
     </div>
+</div>
 </x-app-layout>
 
