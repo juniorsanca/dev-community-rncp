@@ -1,21 +1,43 @@
 <x-app-layout>
-    @include('partials.nav')
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Page profil') }}
-        </h2>
-    </x-slot>
+    <x-slot name="header">   @include('partials.nav')    </x-slot>
+
+<div class="profil-div" style="background-color: #eef2f5;">
+    <div class="edit-profil-div1" style="background-color: #EEF2F5; heigth: 100vh">
+        <div style="margin: 20px">
+            <div class="dash-div1_profil">
+                <img src="" />
+                <p>@Username</p>
+                <p>Développeur web</p>
+            </div>
+
+            <div style="margin-top: 20%">
+                <h2 class="dash-div3_actu_title" style="margin: 5px">Contacts</h2>
+                <div class="dash-div1_contact">
+                    <img src="" />
+                    <p>@Username</p>
+                </div>
+                <div class="dash-div1_contact">
+                    <img src="" />
+                    <p>@Username</p>
+                </div>
+                <div class="dash-div1_contact">
+                    <img src="" />
+                    <p>@Username</p>
+                </div>
+                <div class="dash-div1_contact">
+                    <img src="" />
+                    <p>@Username</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- component -->
-    <div class="relative min-h-screen flex items-center justify-center bg-center py-12 px-4 sm:px-6 lg:px-8 bg-no-repeat bg-cover relative items-center"
-         style="
-         background-image: url(#);">
-
-        <div class="max-w-md w-full space-y-8 p-10 bg-white rounded-xl shadow-lg z-10">
+        <div class="edit-profil-div2">
             <div class="grid gap-8 grid-cols-1">
                 <div class="flex flex-col ">
                     <div class="flex flex-col sm:flex-row items-center">
-                        <h2 class="font-semibold text-lg mr-auto">Modifier mon profil</h2>
+                        <h2 class="font-semibold text-lg mr-auto">Éditer le profil</h2>
                         <div class="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0"></div>
                     </div>
 
@@ -48,7 +70,7 @@
                                 <div class="mb-3 space-y-2 w-full text-xs">
                                     <label class="font-semibold text-gray-600 py-2"> Nom <abbr title="required">*</abbr></label>
                                     <input placeholder="Company Name"
-                                           class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
+                                           class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter h-10 px-4"
                                            type="text"
                                            name="name"
                                            value="{{ old('name', $user->name) }}"
@@ -64,7 +86,7 @@
                                 <div class="mb-3 space-y-2 w-full text-xs">
                                     <label class="font-semibold text-gray-600 py-2">Adresse email <abbr title="required">*</abbr></label>
                                     <input placeholder="Email ID"
-                                           class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
+                                           class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter h-10 px-4"
                                            type="text"
                                            name="email"
                                            value="{{ old('email', $user->email) }}"
@@ -81,7 +103,7 @@
                             <div class="flex-auto w-full mb-1 text-xs space-y-2">
                                 <label class="font-semibold text-gray-600 py-2">Bio</label>
                                 <textarea name="bio" id="bio"
-                                          class="w-full min-h-[100px] max-h-[300px] h-28 appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg  py-4 px-4"
+                                          class="w-full min-h-[100px] max-h-[300px] h-28 appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter py-4 px-4"
                                           placeholder="Enter your comapny info"
                                           spellcheck="false"> {{ old('bio', $user->bio) }} </textarea>
                                 @if($errors->has('bio'))
@@ -114,8 +136,8 @@
                             </div>
                             --}}
                             <div class="mt-5 text-right md:space-x-3 md:block flex flex-col-reverse">
-                                <button class="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-gray-600 rounded-full hover:shadow-lg hover:bg-gray-100"> Cancel </button>
-                                <button class="mb-2 md:mb-0 bg-green-400 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-green-500" type="submit">Valider</button>
+                                <button class="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-gray-600 hover:shadow-lg hover:bg-gray-100"> Annuler </button>
+                                <button class="mb-2 md:mb-0 bg-green-400 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white hover:shadow-lg hover:bg-green-500" type="submit">Enregistrer</button>
                             </div>
                         </div>
                     </div>
@@ -124,5 +146,9 @@
             </div>
         </div>
 
+        <div class="edit-profil-div3">
+
+        </div>
+</div>
 </x-app-layout>
 

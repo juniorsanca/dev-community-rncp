@@ -1,22 +1,14 @@
 <!-- POST -->
 <div class="flex py-4 px-4 border-b-2" style="background-color: #ffffff; margin: 20px 0px;">
     <div class="">
-        @if($post->user->photo)
-            <img
-                class="p-2 rounded rounded-full"
-                src=" {{ url("imgs/".$post->user->photo) }}">
-        @endif
     </div>
     <div class="px-2 pt-2 flex-grow">
-        <header>
-            <a href="#" class="text-black no-underline">
-                <span class="font-medium">{{ $post->user->name }}</span>
-            </a>
-
+        <header style="display: flex">
+            @if($post->user->photo) <img style="width: 10%;border-radius: 50%;" class="" src=" {{ url("imgs/".$post->user->photo) }}"> @endif
+            <a href="#" style="width:85%; margin-top: 10px" class="text-black no-underline"> <span style="margin-left: 10px;" class="font-medium">{{ $post->user->name }}</span> </a>
         </header>
-        <article class="py-4 text-grey-darkest">
-            {{ $post->body }}
-        </article>
+        <article class="py-4 text-grey-darkest"> {{ $post->body }} </article>
+
         <footer class="border-t border-grey-lighter text-sm flex" style="display: flex; width: 100%">
             <div style="width: 50%; display: flex;">
             <form action="{{ route('posts.like', ['post' => $post->id]) }}" method="post">
@@ -75,14 +67,14 @@
                 @csrf
                 <div class="bg-grey-lighter p-4">
                     <div class="flex">
-                        @if(Auth::user()->photo)
+                        {{-- @if(Auth::user()->photo)
                             <img
                                 src=" {{ url("imgs/".Auth::user()->photo) }}"
                                 alt="photo-profil"
-                                class="rounded-full mr-2 my-auto"
-                                style="width: 45px; height: 45px"
+                                class=""
+                                style="width: 45px;"
                             >
-                        @endif
+                        @endif --}}
                         <textarea
                             id="body"
                             name="body"
@@ -104,7 +96,7 @@
                             style="    
                                 background-color: #4E44E3;
                                 color: #ffffff;">
-                            Commenter
+                            Répondre
                         </button>
                     </div>
 
@@ -118,37 +110,26 @@
 
                 @if($comment->post_id == $post->id)
 
-                    <div class="flex py-4 px-4 border-b-2">
-                        <div class="">
-                            @if($comment->user->photo)
-                                <img
-                                    class="p-2 rounded rounded-full"
-                                    src="{{ url("imgs/".$comment->user->photo) }}">
-                            @endif
-                        </div>
+                    <div class="" style="width: 100%">
                         <div class="px-2 pt-2 flex-grow">
-                            <header>
-                                <a href="#" class="text-black no-underline">
-                                    <span class="font-medium">{{ $comment->user->name }}</span>
-                                </a>
-
-                                <div class="text-xs text-grey flex items-center my-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                         fill="none"
-                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                         stroke-linejoin="round"
-                                         class="h-4 w-4 mr-1 feather feather-calendar">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                                    </svg>
-                                    <span>{{ $comment->created_at }}</span>
+                            <div class="" style="display: flex">
+                                <div class="" style="width: 10%">
+                                    @if($comment->user->photo) <img style="border-radius: 50%" class="" src="{{ url("imgs/".$comment->user->photo) }}"> @endif
                                 </div>
-                            </header>
-                            <article class="py-4 text-grey-darkest">
-                                {{ $comment->body }}
-                            </article>
+                                <div style="margin-left: 10px">
+                                    <header>
+                                        <a href="#" class="text-black no-underline">
+                                            <span class="font-medium">{{ $comment->user->name }}</span>
+                                        </a>
+                                    </header>
+                                    <article class="text-grey-darkest">
+                                        {{ $comment->body }}
+                                    </article>
+                                    <div class="text-xs text-grey flex items-center my-1" style="margin-top: 5px">
+                                        <span>{{ $comment->created_at }}</span>
+                                    </div>
+                                </div>
+                            </div>
                             <footer class="border-t border-grey-lighter text-sm flex">
                                 <form
                                     action="{{ route('comments.like', ['post' => $post->id, 'comment' => $comment->id]) }}"
@@ -173,13 +154,14 @@
 
                                     </button>
                                 </form>
-
                             </footer>
 
                         </div>
+
+
+
                     </div>
                 @endif
-
             @endforeach
         @endif
 

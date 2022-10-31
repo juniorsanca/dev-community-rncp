@@ -62,8 +62,8 @@
                                     <img
                                         src=" {{ url("imgs/".Auth::user()->photo) }}"
                                         alt="photo-profil"
-                                        class="rounded-full mr-2 my-auto"
-                                        style="width: 45px; height: 45px"
+                                        class=""
+                                        style="width: 60px;"
                                     >
                                     @endif
                                     <textarea
@@ -77,7 +77,7 @@
                                 <div class=" dash-div2-input_button">
                                     <button type="submit" 
                                         class="dash-div2-input_button_btn border text-white" 
-                                        style="background-color: #1C9BEF;                                    ">
+                                        style="background-color: #4E44E3;                                    ">
                                         Publier
                                     </button>
                                 </div>

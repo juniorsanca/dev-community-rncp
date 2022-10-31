@@ -144,10 +144,38 @@
         display: flex
     }
     .profil-div1{
-        width: 20%;
+        width: 25%;
     }
     .profil-div2{
-        width: 80%;
+        width: 45%;
+    }
+    .profil-div3{
+        width: 30%;
+        background-color: #eef2f5;
+    }
+    .profil-div2-header{
+        width: 100%;
+        height: 40px;
+        margin-top: 5px;
+        background-color: #ffffff;
+    }
+    .edit-profil-div1{
+        width: 25%;
+    }
+    .edit-profil-div2{
+        width: 45%;
+    }
+    .edit-profil-div3{
+        width: 30%;
+        background-color: #eef2f5;
+    }
+    .edit-profil-div2{
+        margin: 20px; 
+        padding: 20px; 
+        background-color: #fff;
+    }
+    .profil-image{
+        background-color: #000000
     }
 
     @media only screen and (max-width: 1200px){
@@ -186,6 +214,37 @@
             display: none
         }
         .dash-div2{
+            width: 100%
+        }
+        .profil-div1{
+            display: none
+        }
+        .profil-div2{
+            width: 100%
+        }
+        .profil-div3{
+            display: none
+        }
+        .profil-image{
+            height: 100%;
+            width: 100%;
+        }
+        .edit-profil-div1{
+            display: none
+        }
+        .edit-profil-div3{
+
+        }
+        .edit-profil-div3{
+            display: none
+        }
+        .edit-profil-div2 {
+            width: 100%;
+        }
+        .edit-profil-div2{
+            margin: 0
+        }
+        .form-control{
             width: 100%
         }
     }
