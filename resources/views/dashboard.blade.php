@@ -58,14 +58,6 @@
                             @csrf
                             <div class="dash-div2-input bg-grey-lighter" style="margin-top: 2%; margin-bottom: 2%">
                                 <div class="dash-div2-input_textarea flex">
-                                    @if(Auth::user()->photo)
-                                    <img
-                                        src=" {{ url("imgs/".Auth::user()->photo) }}"
-                                        alt="photo-profil"
-                                        class=""
-                                        style="width: 60px;"
-                                    >
-                                    @endif
                                     <textarea
                                         id="textarea"
                                         name="body"
