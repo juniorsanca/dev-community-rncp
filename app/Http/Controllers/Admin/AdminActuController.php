@@ -5,6 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Actu;
+use Illuminate\Support\Facades\File;
+
 
 // use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
@@ -136,8 +138,19 @@ class AdminActuController extends Controller
      * @param  \App\Models\Actu  $actu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Actu $actu)
+    public function destroy($id)
     {
         //
+        $actu = Actu::find($id);
+
+        // delete file inside folder
+        $filepath = ('imgs/' . $actu->image);
+        if(File::exists($filepath)) {
+            File::delete($filepath);
+        }
+
+        $actu ->delete();
+        return redirect('admin')->with('success', 'L actualité à été supprimé avec succés');
+
     }
 }

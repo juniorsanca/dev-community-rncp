@@ -47,13 +47,14 @@ Route::post('/comments/{comment}/like', [CommentsController::class, 'like'])->mi
     ]--*/
     // Route::get('/admin', function () { return view('admin.home'); })->middleware(['auth'])->name('admin');
     Route::get('/admin', [\App\Http\Controllers\Admin\AdminActuController::class, 'index' ])->name('index')->middleware(['auth']);
-    Route::get('/actus/create', [\App\Http\Controllers\Admin\AdminActuController::class, 'create' ]) ->name('route.index');
+    Route::get('/admin/actus/create', [\App\Http\Controllers\Admin\AdminActuController::class, 'create' ]) ->name('route.index');
     // Route::get('actus', [\App\Http\Controllers\Admin\ActuController::class, 'index' ]) ->name('route.index');
     // Route::get('actus/create', [\App\Http\Controllers\Admin\ActuController::class, 'create' ]) ->name('route.create');
-    Route::post('actus/store', [\App\Http\Controllers\Admin\AdminActuController::class, 'store' ]) ->name('admin');
+    Route::post('admin/actus/store', [\App\Http\Controllers\Admin\AdminActuController::class, 'store' ]) ->name('admin');
     Route::get('actus/edit/{id}', [\App\Http\Controllers\Admin\AdminActuController::class, 'edit' ]) ->name('actus.edit');
     Route::put('actus/edit/{id}', [\App\Http\Controllers\Admin\AdminActuController::class, 'update' ]) ->name('actus.update');
-    Route::delete('actus/{id}', [\App\Http\Controllers\Admin\AdminActuController::class, 'destroy' ]) ->name('actus.destroy');
+    
+    Route::delete('admin/actus/{id}', [\App\Http\Controllers\Admin\AdminActuController::class, 'destroy' ]) ->name('admin.destroy');
 
     /*--[
         CRUD -> actus

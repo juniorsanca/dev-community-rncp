@@ -9,7 +9,7 @@
 @endif
     <h2>Actualités</h2>
         <main style="padding: 30px">
-            <a href="/actus/create"><h6>Ajouter une actualité</h3></a>
+            <a href="/admin/actus/create"><h6>Ajouter une actualité</h3></a>
             <div class="my-3 p-3 bg-body rounded shadow-sm">
                 <h6 class="border-bottom pb-2 mb-0">Liste d'actualités</h6>
                 
@@ -24,7 +24,15 @@
                         <strong class="text-gray-dark">{{ $actu->title }}</strong>
                         <div>
                             <a href="#">Modifier</a>
-                            <a href="#">Suprimer</a>
+                            {{-- <a href="#">Suprimer</a> --}}
+
+                            <form action="{{route('admin.destroy', $actu->id)}}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button onclick="return confirm('Êtes vous sûr de vouloir supprimer cet élement ?')" type="submit">Suprimer</button>
+                            </form>
+
+
                         </div>
                         </div>
                         <p class="d-block">{{ $actu->resume }}</p>
