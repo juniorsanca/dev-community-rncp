@@ -1,13 +1,13 @@
 <!-- POST -->
 <div class="flex py-4 px-4 border-b-2" style="background-color: #ffffff; margin: 20px 0px;">
-    <div class="">
-    </div>
     <div class="px-2 pt-2 flex-grow">
         <header style="display: flex">
             @if($post->user->photo) <img style="width: 10%;border-radius: 50%;" class="" src=" {{ url("imgs/".$post->user->photo) }}"> @endif
             <a href="#" style="width:85%; margin-top: 10px" class="text-black no-underline"> <span style="margin-left: 10px;" class="font-medium">{{ $post->user->name }}</span> </a>
         </header>
-        <article class="py-4 text-grey-darkest"> {{ $post->body }} </article>
+        <article class="py-4 text-grey-darkest"> 
+            {{ $post->body }} 
+        </article>
 
         <footer class="border-t border-grey-lighter text-sm flex" style="display: flex; width: 100%">
             <div style="width: 50%; display: flex;">
@@ -67,21 +67,12 @@
                 @csrf
                 <div class="bg-grey-lighter p-4">
                     <div class="flex">
-                        {{-- @if(Auth::user()->photo)
-                            <img
-                                src=" {{ url("imgs/".Auth::user()->photo) }}"
-                                alt="photo-profil"
-                                class=""
-                                style="width: 45px;"
-                            >
-                        @endif --}}
                         <textarea
                             id="body"
                             name="body"
                             class="w-full border-blue"
                         ></textarea>
                     </div>
-
 
                     @error('body')
                     <p class="text-red-500 text-sm mt-2">
@@ -155,15 +146,10 @@
                                     </button>
                                 </form>
                             </footer>
-
                         </div>
-
-
-
                     </div>
                 @endif
             @endforeach
         @endif
-
     </div>
 </div>

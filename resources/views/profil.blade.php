@@ -41,13 +41,6 @@
 
     <div class="profil-div2" style="background-color: #EEF2F5;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-
-            {{-- 
-                width: 100%;
-                height: 40px;
-                background-color: #ffffff;
-            --}}
-
             <div class="profil-div2-header" style="border: #fff 2px">
                 <a class="flex items-baseline mt-3 text-indigo-600 hover:text-indigo-900 focus:text-indigo-900" href="/community">
                     <span class="text-xs ml-1" style="font-size: 25px; margin: 10px">←</span>
